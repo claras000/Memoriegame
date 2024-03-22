@@ -1,0 +1,468 @@
+/* font Überschrift*/
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+/*Bedingungen Responsive Design*/
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+
+/* um die Seiten responsible zu machen*/
+
+* {
+  box-sizing: border-box;
+}
+
+/* responsible Fontsize (mit rem) */
+@media (max-width: 1400px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 668px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 11px;
+  }
+}
+
+.navbar-custom {
+  font-size: 16px;
+}
+
+.nav-item-custom {
+  margin: 0 25px;
+}
+
+.logo {
+  padding: 4px 6px;
+}
+
+.logo img {
+  width: 50px;
+  height: auto;
+}
+
+/* Background */
+.login-background {
+  position: relative;
+  background-color: white;
+  width: 80%;
+  min-height: 100vh;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 30px 50px 20px 50px; /* oben,rechts,unten,links */
+  max-width: 607px;
+}
+
+.login-background h1 {
+  margin: 0 0 25px 0;
+  color: rgb(74, 104, 183);
+}
+
+.login-background p {
+  color: rgb(74, 104, 183);
+}
+
+.login-background .submit {
+  margin: 25px 0;
+  color: rgb(74, 104, 183);
+}
+
+.login-background .eingabeLabel {
+  margin: 25px 0 8px 0;
+  color: rgb(74, 104, 183);
+}
+
+h1,
+h2 {
+  color: white;
+  font-weight: 800;
+}
+
+h3,
+p {
+  color: white;
+}
+
+h3 {
+  font-weight: 200;
+  font-style: italic;
+}
+
+/* Login form */
+.login-form {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgb(74, 104, 183);
+}
+
+.login-form p,
+label {
+  color: rgb(74, 104, 183);
+}
+
+.login-form input {
+  color: rgb(125, 132, 149);
+}
+
+/** Memoriekarten */
+.bildStil {
+  width: 134px;
+  height: 162px;
+  border: 5px solid rgb(74, 104, 183);
+  border-radius: 24px;
+}
+
+/*Input Boxen*/
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="level"] {
+  border-radius: 20px;
+  border: 1px solid rgb(74, 104, 183);
+  background: white;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/*input Button*/
+input[type="submit"] {
+  color: rgb(74, 104, 183);
+  border-radius: 50%;
+  border: none;
+  padding: 12px 18px;
+  text-align: center;
+  text-decoration: solid;
+  font-size: 20px;
+
+  cursor: pointer;
+  transition-duration: 0.4s;
+  margin: 0 6px 25px 6px;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+input[type="submit"]:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.5), 0 17px 50px 0 rgba(0, 0, 0, 0.5);
+  animation: pulse 1s infinite;
+}
+
+/*button pulsiert*/
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* admin Spieler */
+
+table,
+td,
+th {
+  border: 3px solid rgb(225, 232, 250);
+
+  text-align: center;
+}
+
+table {
+  margin: 40px 0 20px 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+.spielkarte {
+  width: 100px;
+  height: auto;
+}
+
+.table-background {
+  position: relative;
+  width: 85%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 50px 50px 50px 50px; /* oben,rechts,unten,links */
+}
+
+.table-background p {
+  color: white;
+  font-size: 12pt;
+}
+
+.table-background h2,
+h1 {
+  color: white;
+}
+
+.table-background h6 {
+  margin-left: auto; /* Rechtsbündige Ausrichtung */
+}
+
+.wrapper {
+  box-sizing: border-box;
+  width: 416px;
+  padding: 40px;
+  /* background-color: rgb(225, 232, 250);*/
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 9.6px;
+}
+
+.game-container {
+  position: relative;
+  width: 100%;
+  display: grid;
+}
+
+/* Background */
+.game-background {
+  position: relative;
+  /* background-color: rgb(225, 232, 250);*/
+  width: 90%;
+  height: auto;
+  min-height: 400px;
+  max-width: 850px;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 30px 50px 20px 50px; /* oben,rechts,unten,links */
+  border: 2px solid white;
+  background-color: white;
+  /* Add the blur effect */
+}
+
+/* Background Game*/
+.gameIntro-background {
+  position: relative;
+  border-radius: 24px;
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 30px auto; /* oben,rechts,unten,links */
+  background-color: none;
+}
+
+.gameIntro-background p,
+h1,
+h2,
+h3 {
+  color: rgba(74, 104, 183);
+}
+
+/*impressum styling*/
+
+.impressum-background {
+  border-radius: 24px 0 0 24px;
+
+  height: auto;
+
+  margin-top: 40px;
+  padding: 30px 50px 20px 50px; /* oben,rechts,unten,links */
+  background-color: none;
+  float: left;
+}
+
+.imageImpressum {
+  width: 450px;
+  height: auto;
+  float: right;
+  margin: 100px 200px 0 0;
+}
+
+.gameIntro-background h1 {
+  margin: 30px 0;
+  font-size: 3rem;
+  color: white;
+  padding: 0;
+  text-align: center;
+}
+
+.gameIntro-background h3 {
+  color: white;
+  padding: 0 0 20px 0;
+  font-weight: 100;
+  font-size: 1.5rem;
+  font-style: italic;
+  text-align: center;
+}
+/*Error bzw. Warnhinweise*/
+.hint {
+  color: red;
+  display: block;
+  margin-top: 5px;
+}
+
+/* responsiv Anpassungen */
+
+@media screen and (max-width: 800px) {
+  td,
+  th {
+    width: 100%;
+  }
+  .navbar-custom {
+    text-align: center;
+  }
+  .login-background,
+  .table-background {
+    padding: 25px 20px;
+    width: 93%;
+    border-radius: 9px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+  .heaeder-image {
+    height: 180px;
+  }
+}
+
+/* Startseite */
+
+.start-background {
+  background: rgba(74, 104, 183);
+
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.start-background h1 {
+  margin: 0 auto;
+  color: white;
+  font-size: 4rem;
+  padding: 0;
+}
+
+.div-center {
+  position: relative;
+  margin: 0 auto;
+  padding: 10% 0;
+  text-align: center;
+  font-size: 14pt;
+}
+
+.divflexSpaceBetween {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+}
+
+.imgMona {
+  width: 300px;
+  height: auto;
+}
+
+/* Startseite Buttons*/
+
+.button-start,
+.button-BackToTabelle {
+  border-radius: none;
+  border: 2px solid white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: solid;
+  font-size: 16px;
+
+  cursor: pointer;
+  transition-duration: 0.4s;
+  margin: 0 6px 25px 6px;
+  color: white;
+
+  background-color: rgba(74, 104, 183);
+}
+
+.button-start:hover,
+.button-BackToTabelle:hover {
+  background-color: #ef6024;
+}
+
+/** on hover Link Spielinhalt **/
+.sortHover:hover {
+  color: red;
+}
+
+/** Hinegrund fullscreen**/
+
+.colored-background {
+  height: auto;
+  min-height: 100vh;
+  width: 100%;
+
+  margin: 0;
+  border: 0;
+  padding: 0;
+  /* background-color: rgb(225, 232, 250);*/
+  background: #ef6024;
+  background-position: center center;
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+.colored-background-blue {
+  height: auto;
+  min-height: 100vh;
+  width: 100%;
+
+  margin: 0;
+  border: 0;
+  padding: 0;
+  /* background-color: rgb(225, 232, 250);*/
+  background: rgba(74, 104, 183);
+  background-position: center center;
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+/**Hintergrund bild **/
+
+/* Startseite */
+
+.image-background {
+  background: rgb(71, 71, 71);
+
+  /*,
+    url(../images/Museum04.jpg)*/
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+  background-repeat: repeat;
+  background-size: cover;
+  height: auto;
+}

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Admin Spielinhalte</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../css/styles.css"
+    />
+  </head>
+  <body>
+    <div class="colored-background">
+      <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <a href="startscreen.html" Link class="logo">
+          <img src="../images/slacklogo.png" alt="Logo" />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active nav-item-custom">
+              <a class="nav-link" href="Spiel.html"
+                >Spielen <span class="sr-only">(current)</span></a
+              >
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Spieleinstellungen
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a
+                  id="adminSpielEinstellungen"
+                  class="dropdown-item"
+                  href="adminSpielEinstellungen.html"
+                  >Spieleinstellung</a
+                >
+                <a
+                  id="adminSpielinhalt"
+                  class="dropdown-item"
+                  href="adminSpielinhalt.html"
+                  >Spielinhalt verwalten</a
+                >
+
+                <a
+                  id="playerSpielinhalt"
+                  class="dropdown-item"
+                  href="playerSpielinhalt.html"
+                  >Spielinhalt User</a
+                >
+
+                <a id="Spielstand" class="dropdown-item" href="Spielstand.html"
+                  >Spielstand</a
+                >
+              </div>
+            </li>
+            <li class="nav-item active nav-item-custom">
+              <a class="nav-link" href="login.html" id="Login"
+                >Login <span class="sr-only">(current)</span></a
+              >
+            </li>
+
+            <li class="nav-item active nav-item-custom">
+              <a class="nav-link" href="profil.html" id="Profil"
+                >Mein Profil <span class="sr-only">(current)</span></a
+              >
+            </li>
+
+            <li class="nav-item active nav-item-custom">
+              <a class="nav-link" href="Impressum.html"
+                >Impressum <span class="sr-only">(current)</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="table-background" id="table-background">
+        <h2><b>Registrierte Spieler*innen</b></h2>
+        <p>Alle Spieler*innen, die sich auf der Webseite registriert haben.</p>
+        <div style="overflow-x: auto">
+          <table style="width: 100%">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Spiellevel</th>
+              </tr>
+            </thead>
+            <tbody id="resultSpieler">
+              <!-- Hier werden die Spielinformationen dynamisch eingefügt -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Spielerdetails -->
+        <div class="hoverEffekt" id="player-page" style="display: none">
+          <h2 id="player-name"></h2>
+          <div id="player-details">
+            <h4>Spielverläufe:</h4>
+            <div style="overflow-x: auto">
+              <table id="game-list" style="width: 100%">
+                <!-- Die Spielinformationen für den ausgewählten Spieler -->
+                <thead>
+                  <tr>
+                    <th onclick="sortTable(0)">Spieldatum</th>
+                    <th onclick="sortTable(1)">Level</th>
+                    <th>Spieldauer</th>
+                    <th>Spielanzahl</th>
+                    <th>Gewinner</th>
+                    <th>Spielverlauf</th>
+                  </tr>
+                </thead>
+                <tbody id="game-list-body">
+                  <!--Hier werden die Spielinformationen dynamisch eingefügt -->
+                </tbody>
+              </table>
+            </div>
+            <br /><br />
+          </div>
+
+          <button
+            id="backToTabelle"
+            type="button"
+            class="button-BackToTabelle"
+            onclick="goBackToTable()"
+          >
+            Zurück zur Tabelle
+          </button>
+          <br /><br />
+        </div>
+      </div>
+
+      <div class="table-background">
+        <h1><b>Level</b></h1>
+        <p>Alle vorhandenen Spiellevel</p>
+        <div style="overflow-x: auto">
+          <table id="levelTable" style="width: 100%">
+            <thead>
+              <tr>
+                <th>Level</th>
+                <th>Kartenanzahl</th>
+                <th>Spielzeit</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="resultLevel">
+              <!-- Placeholder for dynamic data -->
+            </tbody>
+          </table>
+        </div>
+        <br />
+      </div>
+
+      <div class="table-background">
+        <h2><b>Spielkarten</b></h2>
+        <p>Alle im Spiel enthaltenen Spielkarten.</p>
+
+        <div style="overflow-x: auto">
+          <table id="spieler-tabelle" style="width: 100%">
+            <thead id="theadCard">
+              <tr>
+                <!--<th>Künstler*innen</th>-->
+                <th>Bildtitel</th>
+                <th>Bild</th>
+                <th>Künstler*in</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="resultCard">
+              <!-- Table rows will be added dynamically using JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+    </div>
+
+    <!-- JavaScript-Datei einbinden -->
+    <script src="../JS/adSpielinhalt.JS"></script>
+    <!-- session sichtbarkeiten check -->
+    <script src="../JS/SessionCheck.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spielverwaltung</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div class="colored-background">
+      <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <a href="startscreen.html" Link class="logo">
+          <img src="../images/slacklogo.png" alt="Logo" />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active nav-item-custom">
+              <a class="nav-link" href="Spiel.html"
+                >Spielen <span class="sr-only">(current)</span></a
+              >
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Spieleinstellungen
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a
+                  id="adminSpielEinstellungen"
+                  class="dropdown-item"
+                  href="adminSpielEinstellungen.html"
+                  >Spieleinstellung</a
+                >
+                <a
+                  id="adminSpielinhalt"
+                  class="dropdown-item"
+                  href="adminSpielinhalt.html"
+                  >Spielinhalt verwalten</a
+                >
+
+                <a
+                  id="playerSpielinhalt"
+                  class="dropdown-item"
+                  href="playerSpielinhalt.html"
+                  >Spielinhalt User</a
+                >
+
+                <a id="Spielstand" class="dropdown-item" href="Spielstand.html"
+                  >Spielstand</a
+                >
+              </div>
+            </li>
+            <li class="nav-item active nav-item-custom">
+              <a class="nav-link" href="login.html" id="Login"
+                >Login <span class="sr-only">(current)</span></a
+              >
+            </li>
+
+            <li class="nav-item active nav-item-custom">
+              <a class="nav-link" href="profil.html" id="Profil"
+                >Mein Profil <span class="sr-only">(current)</span></a
+              >
+            </li>
+
+            <li class="nav-item active nav-item-custom">
+              <a class="nav-link" href="Impressum.html"
+                >Impressum <span class="sr-only">(current)</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="login-background">
+        <h1><b>Spielverwaltung</b></h1>
+        <br />
+        <h2>Neue Spielkarte hinzufügen</h2>
+
+        <p></p>
+
+        <form class="login-form">
+          <label for="kartenname">Kartentitel</label>
+          <input type="text" id="name" name="name" required />
+          <br /><br />
+
+          <label for="kartenbild">Kartenbild (max. 100KB)</label>
+          <input type="file" id="bild" name="bild" accept="image/*" required />
+          <br /><br />
+
+          <label for="kartenbild">Kuenstler*in (max. 100KB)</label>
+          <input
+            type="file"
+            id="artist"
+            name="artist"
+            accept="image/*"
+            required
+          />
+          <br /><br />
+
+          <button
+            id="insertCard"
+            type="submit"
+            class="button-color2 button-BackToTabelle"
+          >
+            Einfügen
+          </button>
+          <br /><br />
+
+          <p id="infoInsertCard"></p>
+        </form>
+
+        <h2>Spiellevel hinzufügen</h2>
+        <br />
+
+        <form class="login-form" method="post">
+          <label for="levelzahl">Levelzahl:</label>
+          <input
+            type="number"
+            id="level"
+            name="level"
+            min="1"
+            max="50"
+            required
+          />
+          <br /><br />
+
+          <label for="anzahlkarten"
+            >Anzahl der Karten (positive gerade Zahl):</label
+          >
+          <input
+            type="number"
+            id="anzahl_karten"
+            name="anzahl_karten"
+            min="2"
+            max="50"
+            required
+            step="2"
+          />
+          <br /><br />
+
+          <label for="spielzeit">Spielzeit (in Minuten):</label>
+          <input
+            type="number"
+            id="spielZeit"
+            name="spielZeit"
+            min="1"
+            max="30"
+            required
+          />
+          <br /><br />
+
+          <button
+            id="insertLevel"
+            type="submit"
+            class="button-color2 button-BackToTabelle"
+          >
+            Einfügen
+          </button>
+          <br /><br />
+
+          <p id="infoInsertLevel"></p>
+        </form>
+        <br /><br /><br />
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+    </div>
+
+    <!-- JavaScript-Datei einbinden -->
+    <script src="../JS/adSpielEinstellung.js"></script>
+
+    <!-- session sichtbarkeiten check -->
+    <script src="../JS/SessionCheck.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
